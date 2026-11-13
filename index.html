@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campanha no Meta Ads com IA · Comunidade Guedes</title>
+<meta name="description" content="O passo a passo e o prompt que eu uso para a IA montar campanha no Meta Ads, tudo em rascunho, para você conferir antes de publicar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Campanha no Meta Ads com IA · Comunidade Guedes">
+<meta property="og:description" content="Passo a passo e prompt prontos para copiar.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-tela="intro">
+<div class="wrap">
+  <div class="halo"></div>
+
+  <header class="topo">
+    <img src="assets/img/logo.png" alt="" width="30" height="30">
+    <span>comunidade guedes</span>
+  </header>
+
+  <!-- TELA 1: abertura -->
+  <main class="tela" id="intro">
+    <span class="rotulo">Passo a passo · IA no Meta Ads</span>
+    <h1><span id="saudacao">Seu material</span> <span class="grad">está quase liberado.</span></h1>
+    <p class="sub">É o mesmo esquema do post: a IA ligada na conta de anúncios, montando a campanha inteira e deixando tudo em rascunho pra você conferir. Responde 7 perguntas rápidas pra eu te direcionar do jeito certo.</p>
+    <ul class="itens">
+      <li>Como ligar a IA na sua conta de anúncios</li>
+      <li>O prompt que eu uso, pronto pra copiar</li>
+      <li>As travas pra nada ir ao ar sem o seu ok</li>
+    </ul>
+    <button class="btn" id="comecar" type="button">Começar</button>
+    <p class="fino">Ao continuar, você concorda em receber contato da Comunidade Guedes por WhatsApp e e-mail sobre este material e conteúdos de marketing. Dá pra sair quando quiser, é só pedir.</p>
+  </main>
+
+  <!-- TELA 2: perguntas -->
+  <main class="tela" id="quiz">
+    <div class="barra"><i id="progresso"></i></div>
+    <div class="conta"><button class="voltar" id="voltar" type="button" hidden>← Voltar</button><span id="contador">1 de 7</span></div>
+    <div id="pergunta"></div>
+  </main>
+
+  <!-- TELA 3: material -->
+  <main class="tela" id="conteudo">
+    <div class="ok">Liberado! Salva esta página pra voltar quando precisar.</div>
+
+    <section>
+      <div class="kicker">Antes de tudo</div>
+      <h2>Como funciona na prática</h2>
+      <p>Um agente só faz o trabalho de um time inteiro, passando por oito funções na ordem certa. No fim ele te mostra um plano, você aprova e ele cria tudo no Gerenciador, sem publicar nada.</p>
+      <div class="funcoes">
+        <div><b>Estrategista</b>Objetivo e estrutura da campanha.</div>
+        <div><b>Orçamento</b>Quanto por dia e onde o valor fica.</div>
+        <div><b>Público</b>Região, idade e um conjunto aberto de teste.</div>
+        <div><b>Conversão</b>Pra onde o clique vai, com link rastreado.</div>
+        <div><b>Pixel</b>O evento certo pro objetivo.</div>
+        <div><b>Copy</b>Três textos e três títulos, em ângulos diferentes.</div>
+        <div><b>Criativo</b>Qual mídia entra em cada anúncio.</div>
+        <div><b>Revisão</b>Confere tudo antes e depois de criar.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="kicker">Checklist</div>
+      <h2>O que você precisa ter</h2>
+      <ul class="lista">
+        <li>Uma conta no Claude (claude.ai).</li>
+        <li>Conta de anúncios ativa, com forma de pagamento, e você como administrador.</li>
+        <li>Página do Facebook e perfil do Instagram ligados à conta de anúncios.</li>
+        <li>Pixel instalado e recebendo o evento que você quer medir, se o destino for um site.</li>
+        <li>Os vídeos e imagens já enviados pra biblioteca de mídia do Gerenciador.</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="passo"><span class="num">1</span><h2>Liga o Claude na conta de anúncios</h2></div>
+      <p>A Meta tem um conector oficial pra IA trabalhar direto no Gerenciador de Anúncios. É por ele que o Claude lê os números e cria as campanhas.</p>
+      <ol class="mini">
+        <li>No Claude, abre <b>Configurações</b> e entra em <b>Conectores</b>.</li>
+        <li>Escolhe <b>Adicionar conector personalizado</b>, dá o nome "Meta Ads" e cola o endereço abaixo.</li>
+        <li>Entra com o Facebook que tem acesso à conta de anúncios e autoriza.</li>
+        <li>Testa pedindo: "lista minhas contas de anúncio".</li>
+      </ol>
+      <div class="bloco">
+        <div class="cab"><span>Endereço do conector</span><button class="copiar" data-alvo="t-url">Copiar</button></div>
+        <pre id="t-url">https://mcp.facebook.com/ads</pre>
+      </div>
+      <div class="nota"><b>Se a conta não aparecer</b>A liberação desse recurso é feita aos poucos pela Meta. Tenta com outra conta de anúncios ou volta em alguns dias.</div>
+    </section>
+
+    <section>
+      <div class="passo"><span class="num">2</span><h2>Cria um projeto e cola o prompt</h2></div>
+      <p>No Claude, cria um <b>Projeto</b> (o meu se chama "Tráfego") e cola o texto abaixo nas instruções. É ele que faz a IA trabalhar por funções e nunca publicar sozinha.</p>
+      <div class="bloco">
+        <div class="cab"><span>Prompt do projeto</span><button class="copiar" data-alvo="t-prompt">Copiar</button></div>
+<pre id="t-prompt">Você é meu time de tráfego no Meta Ads, em um agente só. Sempre que eu pedir uma campanha, passe pelas funções abaixo, nesta ordem, e me entregue o resultado de todas no plano.
+
+FUNÇÕES
+1. Estrategista: define o objetivo e a estrutura (campanha, conjuntos e anúncios) e explica em uma linha por que essa estrutura atende o meu objetivo.
+2. Orçamento: orçamento diário na campanha, a não ser que eu peça por conjunto. Se o valor for pequeno, use menos conjuntos.
+3. Público: use a região e a idade do briefing e inclua sempre um conjunto com público aberto para teste. Público salvo, só se eu passar o nome.
+4. Conversão: para onde o clique vai. Se for site, monte o link com UTM (utm_source=meta, utm_medium=pago, utm_campaign=nome da campanha). Se for WhatsApp, confirme o número comigo.
+5. Pixel: indique o conjunto de dados e o evento certo para o objetivo. Se a campanha for de mensagem, diga que não precisa de pixel.
+6. Copy: escreva 3 textos principais e 3 títulos com ângulos diferentes, no meu tom. Não prometa resultado e não afirme nada pessoal sobre quem lê.
+7. Criativo: diga qual mídia da biblioteca vai em cada anúncio, misturando vídeo e imagem. Dos recursos Advantage+ do criativo, ligue só o que eu pedir.
+8. Revisão: confira tudo antes de me mostrar o plano e de novo depois de criar.
+
+REGRAS
+- Antes de criar qualquer coisa, me mostre o PLANO em tabela e espere eu responder "ok".
+- Crie tudo em RASCUNHO ou pausado. Só publique quando eu escrever PUBLICAR.
+- Não edite campanha ativa sem me mostrar antes exatamente o que vai mudar.
+- Não invente público, pixel, link, preço nem oferta. O que faltar, pergunte de uma vez, em uma única mensagem.
+- Nunca peça senha, cartão ou token.
+- Nome da campanha: [OBJETIVO][PRODUTO][PREÇO][CONTA][DATA DE INÍCIO]. Nome do conjunto: o público. Nome do anúncio: formato e gancho.
+- Se algo impedir de terminar, pare e me diga exatamente o que já foi criado e o que falta.
+
+REVISÃO FINAL (confira no que foi criado, não no plano)
+Nome e conta certos, objetivo, orçamento, datas, público e conjunto aberto, link com UTM abrindo, pixel e evento, página e Instagram selecionados, e a prévia de cada anúncio sem erro de português e sem nada cortado.
+Depois me entregue um resumo curto e pergunte se pode PUBLICAR.</pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="passo"><span class="num">3</span><h2>Manda o briefing</h2></div>
+      <p>Toda campanha começa com esse modelo preenchido. Quanto mais completo, menos a IA precisa perguntar.</p>
+      <div class="bloco">
+        <div class="cab"><span>Modelo de briefing</span><button class="copiar" data-alvo="t-brief">Copiar</button></div>
+<pre id="t-brief">Conta de anúncio:
+Produto ou oferta (com preço):
+Destino do clique (site, WhatsApp, Direct ou formulário):
+Objetivo: vendas / cadastros / mensagens / tráfego / alcance
+Orçamento por dia: R$
+Região e idade (ou "aberto"):
+Pixel e evento (se for para site):
+Criativos (nome na biblioteca do Gerenciador):
+Textos (ou "escreve no meu tom"):
+Data de início e de fim (se for promoção):</pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="passo"><span class="num">4</span><h2>Aprova o plano</h2></div>
+      <p>O Claude devolve uma tabela com a campanha, cada conjunto e cada anúncio, mais as variações de texto. Pede os ajustes que quiser ali mesmo. Quando estiver do seu jeito, responde <b>ok</b> e ele cria tudo no Gerenciador, em rascunho.</p>
+    </section>
+
+    <section>
+      <div class="passo"><span class="num">5</span><h2>Confere o rascunho e publica</h2></div>
+      <p>Abre o Gerenciador de Anúncios e olha com os próprios olhos antes de liberar:</p>
+      <ul class="lista">
+        <li>Objetivo, orçamento diário e datas.</li>
+        <li>Público, idade e região de cada conjunto.</li>
+        <li>Link abrindo certo, ou o número de WhatsApp correto.</li>
+        <li>Pixel e evento.</li>
+        <li>Prévia de cada anúncio, no feed e nos stories.</li>
+      </ul>
+      <p style="margin-top:14px">Tudo certo? Publica pelo Gerenciador ou escreve <b>PUBLICAR</b> no chat.</p>
+      <div class="nota"><b>Depois de publicar</b>Os primeiros 3 a 4 dias são fase de aprendizado. Segura a mão e não mexe, a não ser que o anúncio não esteja entregando.</div>
+    </section>
+
+    <section>
+      <div class="kicker">Pra não travar</div>
+      <h2>O que o conector ainda não faz</h2>
+      <ul class="lista">
+        <li><b>Arquivo do computador:</b> sobe a mídia na biblioteca do Gerenciador antes.</li>
+        <li><b>Formulário de cadastro da Meta:</b> cria o formulário no Gerenciador e passa o nome pra IA.</li>
+        <li><b>Interesses:</b> ele não pesquisa. Vai de público aberto ou de um público que você já tem salvo.</li>
+        <li><b>Conta sem Instagram ligado:</b> liga antes, senão o anúncio não sai com o seu perfil.</li>
+      </ul>
+    </section>
+
+    <div class="final">
+      <h2>Travou em algum passo?</h2>
+      <p>Me chama no direct que eu te ajudo a destravar. E se preferir que a gente cuide do tráfego do seu negócio, é só falar: a Comunidade Guedes é uma assessoria em marketing.</p>
+      <a class="btn" id="cta-direct" href="https://ig.me/m/gilvanguedesjr" target="_blank" rel="noopener">Chamar no direct</a>
+      <a class="sec" href="https://www.instagram.com/gilvanguedesjr/" target="_blank" rel="noopener">@gilvanguedesjr</a>
+    </div>
+
+    <ul class="pilares">
+      <li>Estratégia</li><li>Tecnologia</li><li>Posicionamento</li><li>Resultados</li>
+    </ul>
+  </main>
+
+  <footer>
+    Comunidade Guedes · Assessoria em Marketing<br>
+    Dúvidas sobre seus dados: <a href="mailto:suporte@comunidadeguedes.com.br">suporte@comunidadeguedes.com.br</a>
+  </footer>
+</div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
