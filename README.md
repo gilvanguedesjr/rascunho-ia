@@ -41,8 +41,11 @@ Pixel `1450677309633453`. Eventos: `PageView` ao abrir, `Lead` quando o contato 
 
 ## Publicar
 
-Qualquer hospedagem de site estático serve (a pasta inteira, com `index.html` na raiz). Depois de publicar, o link do direct fica assim:
+No ar em **https://comunidadeguedes.site** pelo GitHub Pages: todo push na `main` publica sozinho em cerca de um minuto.
+
+- Domínio: arquivo `CNAME` na raiz. DNS na Hostinger: `A @ -> 185.199.108.153` e `CNAME www -> gilvanguedesjr.github.io`.
+- Link para o direct:
 
 ```
-https://SEU-DOMINIO/?n={{first_name}}&utm_source=instagram&utm_medium=dm&utm_campaign=rascunho
+https://comunidadeguedes.site/?n={{first_name}}&utm_source=instagram&utm_medium=dm&utm_campaign=rascunho
 ```
